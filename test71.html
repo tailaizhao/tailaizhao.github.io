@@ -10,7 +10,7 @@
             // this handler will be executed every time the cursor is moved over an element.
             var handler = function( event ) {
                 // highlight the mouseover target
-                event.target.style.color = "red";
+                event.target.style.color = "blue";
 
                 // set target's position to an random one.
                 event.target.style.left = (Math.random() * 600) + "px";
@@ -21,9 +21,17 @@
                     event.target.style.color = "";
                 }, 500);
             };
-
+          
+          var poop = function ( event ) {
+            event.target.text = 'Trololololololol';
+               // reset the color after a short delay               
+              setTimeout(function() {
+                  event.target.text = 'Click me if you can' ;
+              }, 500);
+          };
+           
             // now, hooked up an event: mouseover, which happens whenever the mouse cursor moved into an element's box.
-            runningButton.addEventListener("mouseover", handler, false);
+            runningButton.addEventListener("mouseover", poop, false);
         </script>
     </body>
 </html>
