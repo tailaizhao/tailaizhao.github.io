@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <button id="running-button" style="position:absolute; top:10px; left:10px;">Click me if you can!</button>
+        <script>
+            var runningButton = document.getElementById("running-button");
+
+            // this handler will be executed every time the cursor is moved over an element.
+            var handler = function( event ) {
+                // highlight the mouseover target
+                event.target.style.color = "red";
+
+                // set target's position to an random one.
+                event.target.style.left = (Math.random() * 200) + "px";
+                event.target.style.top = (Math.random() * 200) + "px";
+
+                // reset the color after a short delay
+                setTimeout(function() {
+                    event.target.style.color = "";
+                }, 500);
+            };
+
+            // now, hooked up an event: mouseover, which happens whenever the mouse cursor moved into an element's box.
+            runningButton.addEventListener("mouseover", handler, false);
+        </script>
+    </body>
+</html>
